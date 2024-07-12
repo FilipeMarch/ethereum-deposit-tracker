@@ -1,6 +1,8 @@
 import { AlchemyProvider, Contract, ContractEventPayload } from 'ethers';
 import { ALCHEMY_API_KEY, BEACON_DEPOSIT_CONTRACT_ADDRESS } from './config';
 import { Logger } from './logger';
+import { db } from './db';
+import { deposits } from './schema';
 
 // ABI for the Deposit event
 const deposit_event_abi = [
@@ -52,8 +54,9 @@ const handleDepositEvent = async ({
     }
 
     const senderAddress = transaction.from;
-    const timestamp = new Date(block.timestamp * 1000).toString();
+    const timestamp = new Date(block.timestamp * 1000);
 
+    // Warn that a new deposit has been made
     logger.info({
       blockNumber,
       transactionHash,
@@ -66,17 +69,22 @@ const handleDepositEvent = async ({
       index,
     });
 
-    // TODO: Store / notify
+    // Store on Postgres
+    await db.insert(deposits).values({
+      hash: transactionHash,
+      blockNumber: blockNumber.toString(),
+      blockTimestamp: timestamp,
+      fee: '0',
+      pubkey: pubkey,
+    });
+
+    // TODO: Notify on Telegram
   } catch (error) {
-    const message =
-      error instanceof Error ? error.message : JSON.stringify(error);
-    logger.error(`Error processing deposit event: ${message}`);
+    logger.error(`Error processing deposit event: ${error}`);
   }
 };
 
 export function startTrackingDeposits() {
-  logger.info('Starting...');
-
   // Listen for Deposit events
   contract.on(
     'DepositEvent',
