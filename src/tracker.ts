@@ -74,26 +74,28 @@ const handleDepositEvent = async ({
   }
 };
 
-// Listen for Deposit events
-contract.on(
-  'DepositEvent',
-  (
-    pubkey: string,
-    withdrawal_credentials: string,
-    amount: string,
-    signature: string,
-    index: string,
-    event: ContractEventPayload
-  ) => {
-    handleDepositEvent({
-      pubkey,
-      withdrawal_credentials,
-      amount,
-      signature,
-      index,
-      event,
-    });
-  }
-);
+export function startTrackingDeposits() {
+  logger.info('Starting...');
 
-logger.info('Starting...');
+  // Listen for Deposit events
+  contract.on(
+    'DepositEvent',
+    (
+      pubkey: string,
+      withdrawal_credentials: string,
+      amount: string,
+      signature: string,
+      index: string,
+      event: ContractEventPayload
+    ) => {
+      handleDepositEvent({
+        pubkey,
+        withdrawal_credentials,
+        amount,
+        signature,
+        index,
+        event,
+      });
+    }
+  );
+}
