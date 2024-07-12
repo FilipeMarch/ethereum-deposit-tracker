@@ -24,12 +24,15 @@
   },
   "homepage": "https://github.com/FilipeMarch/ethereum-deposit-tracker#readme",
   "devDependencies": {
+    "drizzle-kit": "^0.23.0",
     "tsx": "^4.16.2",
     "typescript": "^5.5.3"
   },
   "dependencies": {
     "@types/node": "^20.14.10",
     "dotenv": "^16.4.5",
-    "ethers": "^6.13.1"
+    "drizzle-orm": "^0.32.0",
+    "ethers": "^6.13.1",
+    "postgres": "^3.4.4"
   }
 }
