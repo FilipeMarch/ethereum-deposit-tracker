@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    environment:
+      POSTGRES_DB: grafana
+      POSTGRES_USER: grafana
+      POSTGRES_PASSWORD: grafana
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - grafana-net
+    ports:
+      - '5432:5432'
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    environment:
+      - GF_DATABASE_TYPE=postgres
+      - GF_DATABASE_HOST=postgres:5432
+      - GF_DATABASE_NAME=grafana
+      - GF_DATABASE_USER=grafana
+      - GF_DATABASE_PASSWORD=grafana
+    ports:
+      - '3000:3000'
+    depends_on:
+      - postgres
+    networks:
+      - grafana-net
+
+volumes:
+  postgres-data:
+
+networks:
+  grafana-net:
