@@ -31,6 +31,16 @@ services:
     networks:
       - grafana-net
 
+  tracker:
+    image: ethereum-deposit-tracker:latest
+    build:
+      context: .
+    container_name: eth-deposit-tracker
+    depends_on:
+      - postgres
+    networks:
+      - grafana-net
+
 volumes:
   postgres-data:
 
