@@ -1,0 +1,35 @@
+{
+  "name": "ethereum-deposit-tracker",
+  "version": "1.0.0",
+  "description": "A robust and efficient Ethereum Deposit Tracker to monitor and record ETH deposits on the Beacon Deposit Contract",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "start": "tsx --watch src/tracker.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FilipeMarch/ethereum-deposit-tracker.git"
+  },
+  "keywords": [
+    "ethereum",
+    "deposit",
+    "tracker"
+  ],
+  "author": "filipe marchesini",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FilipeMarch/ethereum-deposit-tracker/issues"
+  },
+  "homepage": "https://github.com/FilipeMarch/ethereum-deposit-tracker#readme",
+  "devDependencies": {
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "@types/node": "^20.14.10",
+    "dotenv": "^16.4.5",
+    "ethers": "^6.13.1"
+  }
+}
