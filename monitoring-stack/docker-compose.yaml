@@ -34,3 +34,7 @@ services:
       - /var/lib/docker/:/var/lib/docker:ro
     networks:
       - grafana-net
+
+networks:
+  grafana-net:
+    external: true
