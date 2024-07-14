@@ -27,6 +27,10 @@ docker compose up -d
 
 ## Run the tracker app
 
+Enter the `tracker-stack` folder:
+```
+cd tracker-stack
+```
 Start PostgreSQL + Tracker app
 ```
 ALCHEMY_API_KEY=<YOUR_ALCHEMY_API_KEY> docker compose up -d
