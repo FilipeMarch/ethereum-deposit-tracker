@@ -48,12 +48,22 @@ Host URL: postgres:5432
 Database name: eth-deposits
 
 *Authentication*
-Username: grafana
+Username: grafana        
 Password: grafana
 ```
 - Add visualization, select PostgreSQL as data source
 - Select table `deposits` and column `*`, run query, switch to table.
 ![image](https://github.com/user-attachments/assets/92034b25-f3de-418b-8c42-a0f38164c70d)
+
+## Importing the cadvisor dashboard
+
+- Click to import dashboard
+- Load the ID `19792`
+- On Prometheus dropdown, click to configure a new data source, select Prometheus
+- While creating the Prometheus data source, use `http://prometheus:9090` as Prometheus server URL.
+- Finally, import the cadvisor dashboard.
+
+https://github.com/user-attachments/assets/753ed557-7232-4ad4-a842-5d4364c8ae5c
 
 ## Creating Telegram alert
 
