@@ -31,3 +31,33 @@ Start PostgreSQL + Tracker app
 ```
 ALCHEMY_API_KEY=<YOUR_ALCHEMY_API_KEY> docker compose up -d
 ```
+
+## Create dashboard for seeing deposit table
+
+Enter `localhost:3001/login`
+```
+Email: admin
+Password: admin
+```
+
+- Click to create a new dashboard
+- Add PostgreSQL as a data source
+```
+*Connection*
+Host URL: postgres:5432
+Database name: eth-deposits
+
+*Authentication*
+Username: grafana
+Password: grafana
+```
+- Add visualization, select PostgreSQL as data source
+- Select table `deposits` and column `*`, run query, switch to table.
+![image](https://github.com/user-attachments/assets/92034b25-f3de-418b-8c42-a0f38164c70d)
+
+## Creating Telegram alert
+
+Enter `http://localhost:3001/alerting/new/alerting`
+
+
+
