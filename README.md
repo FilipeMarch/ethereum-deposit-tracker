@@ -10,9 +10,10 @@ cd ethereum-deposit-tracker
 
 ## Update the environment variables
 
-Create a `.env` file 
+Create a `.env` file inside `tracker-stack` folder
 
 ```
+cd tracker-stack
 touch .env
 ```
 Add the required ALCHEMY_API_KEY
