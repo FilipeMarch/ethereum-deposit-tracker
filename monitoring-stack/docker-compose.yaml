@@ -3,12 +3,12 @@ services:
   grafana:
     image: grafana/grafana:latest
     container_name: grafana
-      environment:
-        - GF_DATABASE_NAME=grafana
-      ports:
-        - "3001:3000"
-      networks:
-        - grafana-net
+    environment:
+      - GF_DATABASE_NAME=grafana
+    ports:
+      - "3001:3000"
+    networks:
+      - grafana-net
 
   prometheus:
     image: prom/prometheus:latest
