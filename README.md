@@ -13,7 +13,7 @@ cd ethereum-deposit-tracker
 Create a `.env` file inside `tracker-stack` folder
 
 ```
-cd tracker-stack
+cp example.env .env
 touch .env
 ```
 Add the required ALCHEMY_API_KEY
