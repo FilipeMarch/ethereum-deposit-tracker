@@ -77,7 +77,7 @@ SELECT
   count(*) AS deposit_count
 FROM deposits
 GROUP BY 1
-ORDER BY;
+ORDER BY 1;
 ```
 ![image](https://github.com/user-attachments/assets/d4fc16e7-e773-4b24-83f5-b486b2919320)
 ![image](https://github.com/user-attachments/assets/44769e22-e354-4bac-8b8f-8288a6ffff02)
@@ -94,6 +94,8 @@ Obtain your BOT API Token by talking with @BotFather at Telegram:
 ![image](https://github.com/user-attachments/assets/24c3480e-7dfa-4287-bae7-236be315333f)
 - Visit `https://api.telegram.org/bot<YOUR_BOT_API_TOKEN>/getUpdates` and check the Chat ID:
 ![image](https://github.com/user-attachments/assets/ff6d8581-6594-4f1a-afb5-2809dbfe50dc)
+- Save contact point. Add it to your Alert rule, save rule.
+![image](https://github.com/user-attachments/assets/66c28d0a-c731-4cab-bcc1-09e41cc7c9e8)
 
 
 
