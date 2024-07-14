@@ -13,8 +13,8 @@ cd ethereum-deposit-tracker
 Create a `.env` file inside `tracker-stack` folder
 
 ```
+cd tracker-stack
 cp example.env .env
-touch .env
 ```
 Add the required ALCHEMY_API_KEY
 ```
@@ -24,10 +24,6 @@ DATABASE_URL=postgresql://grafana:grafana@localhost:5432/grafana
 
 ## Run the tracker app
 
-Enter the `tracker-stack` folder:
-```
-cd tracker-stack
-```
 Start PostgreSQL + Tracker app
 ```
 ALCHEMY_API_KEY=<YOUR_ALCHEMY_API_KEY> docker compose up
