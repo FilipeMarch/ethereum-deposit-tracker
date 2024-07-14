@@ -8,6 +8,12 @@ git clone https://github.com/FilipeMarch/ethereum-deposit-tracker
 cd ethereum-deposit-tracker
 ```
 
+## Create a Docker network
+
+```
+docker network create grafana-net
+```
+
 ## Run the monitoring stack (for system metrics and alerts with Grafana)
 
 Enter the `monitoring-stack` folder:
