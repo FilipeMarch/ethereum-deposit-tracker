@@ -19,7 +19,6 @@ cp example.env .env
 Add the required ALCHEMY_API_KEY
 ```
 ALCHEMY_API_KEY=<YOUR_ALCHEMY_API_KEY>
-DATABASE_URL=postgresql://grafana:grafana@localhost:5432/grafana
 ```
 
 ## Run the tracker app
