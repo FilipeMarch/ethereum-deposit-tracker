@@ -7,6 +7,9 @@ services:
       - GF_DATABASE_NAME=grafana
     ports:
       - "3001:3000"
+    volumes:
+      - ./grafana/dashboards:/etc/grafana/provisioning/dashboards
+      - ./grafana/provisioning:/etc/grafana/provisioning
     networks:
       - grafana-net
 
