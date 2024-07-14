@@ -53,6 +53,16 @@ const handleDepositEvent = async ({
       throw new Error('Transaction not found');
     }
 
+    const transactionReceipt = await provider.getTransactionReceipt(
+      transactionHash
+    );
+    if (!transactionReceipt) {
+      throw new Error('Transaction receipt not found');
+    }
+
+    // Calculate the transaction fee
+    const fee = transactionReceipt.gasUsed * transaction.gasPrice;
+
     const senderAddress = transaction.from;
     const timestamp = new Date(block.timestamp * 1000);
 
@@ -67,6 +77,7 @@ const handleDepositEvent = async ({
       amount,
       signature,
       index,
+      fee: fee.toString(),
     });
 
     // Store on Postgres
@@ -74,11 +85,9 @@ const handleDepositEvent = async ({
       hash: transactionHash,
       blockNumber: blockNumber.toString(),
       blockTimestamp: timestamp,
-      fee: '0',
+      fee: fee.toString(),
       pubkey: pubkey,
     });
-
-    // TODO: Notify on Telegram
   } catch (error) {
     logger.error(`Error processing deposit event: ${error}`);
   }
