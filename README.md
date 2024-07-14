@@ -8,19 +8,6 @@ git clone https://github.com/FilipeMarch/ethereum-deposit-tracker
 cd ethereum-deposit-tracker
 ```
 
-## Update the environment variables
-
-Create a `.env` file inside `tracker-stack` folder
-
-```
-cd tracker-stack
-cp example.env .env
-```
-Add the required ALCHEMY_API_KEY
-```
-ALCHEMY_API_KEY=<YOUR_ALCHEMY_API_KEY>
-```
-
 ## Run the tracker app
 
 Start PostgreSQL + Tracker app
