@@ -20,7 +20,7 @@ services:
       context: .
     container_name: eth-deposit-tracker
     environment:
-      - DATABASE_URL=postgresql://grafana:grafana@postgres:5432/eth-deposits
+      - DATABASE_URL=postgresql://grafana:grafana@postgres:5432/grafana
       - ALCHEMY_API_KEY=${ALCHEMY_API_KEY}
     depends_on:
       - postgres
