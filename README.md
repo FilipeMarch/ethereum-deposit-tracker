@@ -67,6 +67,8 @@ https://github.com/user-attachments/assets/753ed557-7232-4ad4-a842-5d4364c8ae5c
 
 ## Creating Telegram alert
 
+![image](https://github.com/user-attachments/assets/cefa5921-2d3b-4230-ae70-0e568156096f)
+
 - Enter `http://localhost:3001/alerting/new/alerting`
 - Name: New deposit alert
 
